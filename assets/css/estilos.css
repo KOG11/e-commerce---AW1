@@ -111,6 +111,18 @@ input:focus-visible {
   text-decoration: underline;
 }
 
+.accesos .saludo {
+  color: var(--azul-tinta);
+}
+
+.contador-carrito {
+  background-color: var(--azul-claro);
+  color: var(--azul-tinta);
+  border-radius: 999px;
+  padding: 6px 16px;
+  font-size: 0.875rem;
+}
+
 .navbar {
   background-color: var(--azul);
 }
@@ -182,6 +194,7 @@ input:focus-visible {
   width: 100%;
 }
 
+
 .boton {
   display: inline-block;
   font-family: var(--fuente-titulos);
@@ -216,6 +229,7 @@ input:focus-visible {
   text-align: center;
 }
 
+
 .seccion {
   padding: 48px 0;
 }
@@ -227,6 +241,7 @@ input:focus-visible {
 .titulo-seccion {
   margin-bottom: 24px;
 }
+
 
 .grilla-categorias {
   display: grid;
@@ -270,6 +285,7 @@ input:focus-visible {
   font-size: 1.0625rem;
   color: var(--azul-tinta);
 }
+
 
 .grilla-productos {
   display: grid;
@@ -333,6 +349,12 @@ input:focus-visible {
   margin-bottom: 6px;
 }
 
+.card-producto .descripcion {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
 .card-producto .precio {
   font-family: var(--fuente-titulos);
   font-size: 1.875rem;
@@ -351,6 +373,44 @@ input:focus-visible {
   margin-top: auto;
 }
 
+.control-cantidad {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  border: 1px solid var(--gris-borde);
+  border-radius: var(--radio);
+  overflow: hidden;
+}
+
+.boton-cantidad {
+  flex: 1;
+  font-family: var(--fuente-titulos);
+  font-size: 1.25rem;
+  line-height: 1;
+  color: var(--azul);
+  background-color: var(--blanco);
+  border: none;
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+.boton-cantidad:hover {
+  background-color: var(--azul-claro);
+}
+
+.control-cantidad .cantidad {
+  flex: 1;
+  text-align: center;
+  font-family: var(--fuente-titulos);
+  font-size: 1.0625rem;
+  color: var(--azul-tinta);
+  border-left: 1px solid var(--gris-borde);
+  border-right: 1px solid var(--gris-borde);
+  padding: 10px 0;
+}
+
 .sin-productos {
   grid-column: 1 / -1;
   border: 1px dashed var(--gris-borde);
@@ -358,6 +418,7 @@ input:focus-visible {
   padding: 48px 24px;
   text-align: center;
 }
+
 
 .pantalla-formulario {
   background: linear-gradient(135deg, var(--azul-tinta), var(--azul));
@@ -417,6 +478,7 @@ input:focus-visible {
   text-align: center;
 }
 
+
 .pie {
   background-color: var(--azul-tinta);
   color: var(--blanco);
@@ -473,6 +535,7 @@ input:focus-visible {
   padding-top: 16px;
   font-size: 0.8125rem;
 }
+
 
 @media (max-width: 900px) {
   .portada .contenedor {

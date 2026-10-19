@@ -9,35 +9,7 @@
 </head>
 <body>
 
-  <div class="barra-avisos">
-    <div class="contenedor">
-      <span>Envíos a todo el país - Todas las tarjetas</span>
-      <span>Villa María, Córdoba</span>
-    </div>
-  </div>
-
-  <header class="cabecera">
-    <div class="contenedor">
-      <a class="logo" href="index.html">
-        <img src="assets/img/logo.svg" alt="Casa ISA - Artículos para el Hogar">
-      </a>
-      <nav class="accesos">
-        <a href="pages/registro.html">Crear cuenta</a>
-        <a href="pages/login.html">Iniciar sesión</a>
-        <a href="pages/login.html">Cerrar sesión</a>
-      </nav>
-    </div>
-  </header>
-
-  <nav class="navbar">
-    <div class="contenedor">
-        <a href="index.html" class="activo">Inicio</a>
-        <a href="pages/tv-audio-video.html">Tv, Audio y Video</a>
-        <a href="pages/celulares-tecnologia.html">Celulares y Tecnología</a>
-        <a href="pages/climatizacion.html">Climatización</a>
-        <a href="pages/electrodomesticos.html">Electrodomésticos</a>
-    </div>
-  </nav>
+  <div id="encabezado"></div>
 
   <section class="portada">
     <div class="contenedor">
@@ -58,86 +30,26 @@
   <section class="seccion">
     <div class="contenedor">
       <h2 class="titulo-seccion">Comprá por categoría</h2>
-      <div class="grilla-categorias">
-        <a class="tarjeta-categoria" href="pages/tv-audio-video.html">
-          <span class="marco-icono"><img src="assets/img/ic-tv-audio-video.svg" alt=""></span>
-          <span>Tv, Audio y Video</span>
-        </a>
-        <a class="tarjeta-categoria" href="pages/celulares-tecnologia.html">
-          <span class="marco-icono"><img src="assets/img/ic-celulares-tecnologia.svg" alt=""></span>
-          <span>Celulares y Tecnología</span>
-        </a>
-        <a class="tarjeta-categoria" href="pages/climatizacion.html">
-          <span class="marco-icono"><img src="assets/img/ic-climatizacion.svg" alt=""></span>
-          <span>Climatización</span>
-        </a>
-        <a class="tarjeta-categoria" href="pages/electrodomesticos.html">
-          <span class="marco-icono"><img src="assets/img/ic-electrodomesticos.svg" alt=""></span>
-          <span>Electrodomésticos</span>
-        </a>
-      </div>
+      <!-- Las tarjetas salen del array PAGINAS -->
+      <div class="grilla-categorias" id="categorias"></div>
     </div>
   </section>
 
   <section class="seccion seccion-clara">
     <div class="contenedor">
       <h2 class="titulo-seccion">Productos destacados</h2>
-      <div class="grilla-productos">
-        <article class="card-producto">
-          <div class="imagen">
-            <span class="distintivo">Envío gratis</span>
-            <img src="assets/img/producto-tv.svg" alt="Smart TV 50 pulgadas 4K">
-          </div>
-          <div class="datos">
-            <p class="marca">Samsung</p>
-            <h3 class="nombre">Smart TV 50" 4K Ultra HD</h3>
-            <p class="precio">$ 749.999</p>
-            <p class="cuotas">12 cuotas sin interés de $ 62.499</p>
-            <a class="boton boton-principal boton-ancho" href="#">Ver producto</a>
-          </div>
-        </article>
-      </div>
+      <!-- Las cards las dibuja el componente de cards.js -->
+      <div class="grilla-productos" id="productos" data-categoria="destacados"></div>
     </div>
   </section>
 
-  <footer class="pie">
-    <div class="contenedor">
-      <div class="columnas">
-        <div>
-          <img src="assets/img/logo-icono-blanco.svg" alt="Casa ISA">
-          <p>Artículos para el hogar en Villa María desde 2026.</p>
-        </div>
-        <div>
-          <h3>Categorías</h3>
-          <ul>
-            <li><a href="pages/tv-audio-video.html">Tv, Audio y Video</a></li>
-            <li><a href="pages/celulares-tecnologia.html">Celulares y Tecnología</a></li>
-            <li><a href="pages/climatizacion.html">Climatización</a></li>
-            <li><a href="pages/electrodomesticos.html">Electrodomésticos</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3>Atención al cliente</h3>
-          <ul>
-            <li>Teléfono: (3537) 607341</li>
-            <li>Email: omargianoli11@gmail.com</li>
-            <li>Lunes a viernes de 9 a 18</li>
-            <li>Sábados de 9 a 13</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Nuestro local</h3>
-          <ul>
-            <li>Paso de los Andes 1745</li>
-            <li>Villa María, Córdoba</li>
-            <li><a href="pages/login.html">Iniciar sesión</a></li>
-            <li><a href="pages/registro.html">Crear cuenta</a></li>
-          </ul>
-        </div>
-      </div>
-      <p class="legal">Casa ISA - Trabajo Práctico de Aplicaciones Web I</p>
-    </div>
-  </footer>
+  <!-- El pie tambien se arma desde JavaScript -->
+  <div id="pie"></div>
 
+  <script src="assets/js/datos.js"></script>
+  <script src="assets/js/sesion.js"></script>
+  <script src="assets/js/componentes.js"></script>
+  <script src="assets/js/cards.js"></script>
+  <script src="assets/js/app.js"></script>
 </body>
 </html>

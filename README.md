@@ -24,7 +24,13 @@ tecnología, climatización y electrodomésticos.
 └── assets/
     ├── css/
     │   └── estilos.css         Hoja de estilos única del sitio
-    └── img/                    Logo, íconos y foto de producto
+    ├── js/
+    │   ├── datos.js            Arrays de páginas y de productos
+    │   ├── sesion.js           Login, logout y rutas relativas
+    │   ├── componentes.js      Encabezado, navbar y pie reutilizables
+    │   ├── cards.js            Componente de card con control de cantidad
+    │   └── app.js              Punto de entrada de cada página
+    └── img/                    Logo e íconos en SVG, fotos de producto en WebP
 ```
 
 La navegación usa rutas relativas: desde `index.html` se entra con
