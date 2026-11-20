@@ -17,7 +17,26 @@
           "imagen": "assets/img/producto-tv.webp",
           "stock": 8,
           "envioGratis": true,
-          "destacado": true
+          "destacado": true,
+          "especificaciones": {
+            "Marca": "Samsung",
+            "Tipo de TV": "Smart TV",
+            "Cantidad de pulgadas": "50\"",
+            "Resolución de video": "4K Ultra HD",
+            "Sistema operativo": "Tizen",
+            "Resolución de pantalla": "3840 x 2160",
+            "Formato de pantalla": "Pantalla plana",
+            "Cantidad USB": "1",
+            "Cantidad HDMI": "3",
+            "Sintonizador digital TDA": "Sí",
+            "Apto Netflix": "Sí",
+            "Wi-Fi": "Sí",
+            "Características adicionales": "Procesador Crystal 4K / Motion Xcelerator: mayor claridad de imagen con movimiento fluido / SmartThings: hub inteligente integrado / OTS Lite: sonido envolvente 3D con canales virtuales / Adaptive Sound: sonido optimizado para cada contenido",
+            "Medidas": "Con base (alto 695,1 mm x ancho 1110,8 mm x profundidad 199 mm) / Sin base (alto 643,8 mm x ancho 1110,8 mm x profundidad 76,4 mm)",
+            "Origen": "Argentina",
+            "SKU": "355352",
+            "EAN": "8806097300984"
+          }
         },
         {
           "id": 102,
@@ -28,7 +47,21 @@
           "imagen": "assets/img/producto-barra-sonido.webp",
           "stock": 15,
           "envioGratis": false,
-          "destacado": false
+          "destacado": false,
+          "especificaciones": {
+            "Marca": "LG",
+            "Tipo": "Barra de sonido con subwoofer",
+            "Canales": "2.1",
+            "Potencia total": "300 W",
+            "Subwoofer": "Inalámbrico",
+            "Conectividad": "Bluetooth / HDMI ARC / Entrada óptica / USB",
+            "Control remoto": "Sí",
+            "Montaje en pared": "Sí, soportes incluidos",
+            "Medidas barra": "Alto 68 mm x ancho 890 mm x profundidad 85 mm",
+            "Origen": "Argentina",
+            "SKU": "412078",
+            "EAN": "8806091234567"
+          }
         }
       ]
     },
@@ -46,7 +79,24 @@
           "imagen": "assets/img/producto-celular.webp",
           "stock": 12,
           "envioGratis": true,
-          "destacado": true
+          "destacado": true,
+          "especificaciones": {
+            "Marca": "Samsung",
+            "Modelo": "Galaxy A55 5G",
+            "Pantalla": "6,6\" Super AMOLED",
+            "Resolución": "1080 x 2340",
+            "Memoria RAM": "8 GB",
+            "Almacenamiento": "128 GB ampliable por microSD",
+            "Cámara principal": "50 MP + 12 MP ultra gran angular + 5 MP macro",
+            "Cámara frontal": "32 MP",
+            "Batería": "5000 mAh",
+            "Sistema operativo": "Android 14",
+            "Red": "5G",
+            "Resistencia": "IP67 al agua y al polvo",
+            "Origen": "Argentina",
+            "SKU": "287441",
+            "EAN": "8806095112233"
+          }
         },
         {
           "id": 202,
@@ -57,7 +107,23 @@
           "imagen": "assets/img/producto-notebook.webp",
           "stock": 5,
           "envioGratis": true,
-          "destacado": false
+          "destacado": false,
+          "especificaciones": {
+            "Marca": "Lenovo",
+            "Procesador": "Intel Core i5 de 12va generación",
+            "Memoria RAM": "16 GB DDR4",
+            "Almacenamiento": "512 GB SSD",
+            "Pantalla": "15,6\" Full HD",
+            "Resolución": "1920 x 1080",
+            "Placa de video": "Intel Iris Xe integrada",
+            "Sistema operativo": "Windows 11 Home",
+            "Puertos": "2 USB 3.2 / 1 USB-C / HDMI / Lector de tarjetas / Jack 3,5 mm",
+            "Teclado": "Español con teclado numérico",
+            "Peso": "1,7 kg",
+            "Origen": "Argentina",
+            "SKU": "501923",
+            "EAN": "0196804556677"
+          }
         }
       ]
     },
@@ -75,7 +141,22 @@
           "imagen": "assets/img/producto-aire.webp",
           "stock": 7,
           "envioGratis": true,
-          "destacado": true
+          "destacado": true,
+          "especificaciones": {
+            "Marca": "BGH",
+            "Tipo": "Split muro a muro",
+            "Capacidad": "3500 W",
+            "Función": "Frío / Calor",
+            "Tecnología": "Inverter",
+            "Clase energética": "A",
+            "Refrigerante": "R32",
+            "Superficie recomendada": "Hasta 30 m²",
+            "Nivel sonoro": "Desde 24 dB",
+            "Filtro": "Antibacterial lavable",
+            "Origen": "Argentina",
+            "SKU": "193056",
+            "EAN": "7792170445566"
+          }
         },
         {
           "id": 302,
@@ -86,7 +167,21 @@
           "imagen": "assets/img/producto-ventilador.webp",
           "stock": 24,
           "envioGratis": false,
-          "destacado": false
+          "destacado": false,
+          "especificaciones": {
+            "Marca": "Liliana",
+            "Tipo": "Ventilador de pie",
+            "Diámetro": "20 pulgadas",
+            "Potencia": "120 W",
+            "Velocidades": "3",
+            "Oscilación": "Sí",
+            "Altura regulable": "Sí, de 1,10 m a 1,35 m",
+            "Material de las aspas": "Aluminio",
+            "Base": "Redonda con contrapeso",
+            "Origen": "Argentina",
+            "SKU": "066214",
+            "EAN": "7791675338899"
+          }
         }
       ]
     },
@@ -104,7 +199,22 @@
           "imagen": "assets/img/producto-heladera.webp",
           "stock": 4,
           "envioGratis": true,
-          "destacado": true
+          "destacado": true,
+          "especificaciones": {
+            "Marca": "Whirlpool",
+            "Tipo": "No Frost con freezer superior",
+            "Capacidad total": "430 litros",
+            "Capacidad del freezer": "97 litros",
+            "Dispenser de agua": "Sí",
+            "Clase energética": "A+",
+            "Color": "Acero inoxidable",
+            "Estantes": "4 de vidrio templado",
+            "Cajón de frutas y verduras": "Sí, con control de humedad",
+            "Medidas": "Alto 1860 mm x ancho 700 mm x profundidad 720 mm",
+            "Origen": "Argentina",
+            "SKU": "728310",
+            "EAN": "7790150992211"
+          }
         },
         {
           "id": 402,
@@ -115,7 +225,21 @@
           "imagen": "assets/img/producto-lavarropas.webp",
           "stock": 9,
           "envioGratis": false,
-          "destacado": false
+          "destacado": false,
+          "especificaciones": {
+            "Marca": "Drean",
+            "Tipo de carga": "Frontal",
+            "Capacidad": "8 kg",
+            "Velocidad de centrifugado": "1200 rpm",
+            "Programas de lavado": "15",
+            "Motor": "Eco Inverter",
+            "Clase energética": "A+++",
+            "Display": "Digital con indicador de tiempo",
+            "Medidas": "Alto 845 mm x ancho 595 mm x profundidad 530 mm",
+            "Origen": "Argentina",
+            "SKU": "640175",
+            "EAN": "7791414667788"
+          }
         }
       ]
     }

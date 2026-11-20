@@ -107,7 +107,57 @@ function componenteFicha(producto) {
           </button>
         </div>
       </div>
-    </div>`;
+    </div>
+
+    ${componenteEspecificaciones(producto)}`;
+}
+
+/* ----------------------------------------------------------
+   COMPONENTE: tabla de especificaciones
+   Recorre el objeto especificaciones del producto. Cada clave
+   es el nombre del dato y cada valor su contenido.
+   Los valores con varios items vienen separados por " / " y
+   se muestran como lista.
+   ---------------------------------------------------------- */
+function componenteEspecificaciones(producto) {
+  if (!producto.especificaciones) {
+    return "";
+  }
+
+  const filas = Object.entries(producto.especificaciones)
+    .map(([nombre, valor]) => `
+          <tr>
+            <th scope="row">${nombre}</th>
+            <td>${formatearValor(valor)}</td>
+          </tr>`)
+    .join("");
+
+  return `
+    <section class="especificaciones">
+      <h2>Más información</h2>
+
+      <p class="aclaracion">
+        Las imágenes son de carácter ilustrativo. Las especificaciones están
+        sujetas a modificaciones.
+      </p>
+
+      <table class="tabla-especificaciones">
+        <caption class="oculto">Especificaciones técnicas de ${producto.titulo}</caption>
+        <tbody>${filas}
+        </tbody>
+      </table>
+    </section>`;
+}
+
+/* Un valor con varios items se muestra como lista */
+function formatearValor(valor) {
+  const partes = String(valor).split(" / ");
+
+  if (partes.length < 2) {
+    return valor;
+  }
+
+  return "<ul>" + partes.map(p => `<li>${p}</li>`).join("") + "</ul>";
 }
 
 /* Pantalla para cuando el producto no existe */

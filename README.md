@@ -77,9 +77,16 @@ El catálogo vive en `assets/data/productos.json`, con esta forma:
       "slug": "tv-audio-video",
       "titulo": "Tv, Audio y Video",
       "productos": [
-        { "id": 101, "titulo": "...", "marca": "...", "descripcion": "...",
+        {
+          "id": 101, "titulo": "...", "marca": "...", "descripcion": "...",
           "precio": 749999, "imagen": "...", "stock": 8,
-          "envioGratis": true, "destacado": true }
+          "envioGratis": true, "destacado": true,
+          "especificaciones": {
+            "Marca": "Samsung",
+            "Cantidad de pulgadas": "50\"",
+            "Resolución de pantalla": "3840 x 2160"
+          }
+        }
       ]
     }
   ]
@@ -130,8 +137,15 @@ el catálogo.
 
 La ficha muestra la imagen en grande, la descripción completa, el precio, las
 cuotas, el stock disponible, la garantía y las opciones de envío, más el control
-de cantidad y el botón de compra. Abajo aparecen los otros productos de la misma
-categoría.
+de cantidad y el botón de compra.
+
+Debajo va la tabla de especificaciones técnicas, armada recorriendo el objeto
+`especificaciones` del producto con `Object.entries()`. Cada producto define las
+suyas: un televisor lista pulgadas y resolución, un lavarropas capacidad y
+revoluciones. Los valores que traen varios datos separados por `/` se muestran
+como lista para que se lean mejor.
+
+Al final aparecen los otros productos de la misma categoría.
 
 Como cada ficha tiene su link propio, se puede compartir o guardar en favoritos.
 Si el id no existe o falta, la página muestra un aviso en vez de romperse.
