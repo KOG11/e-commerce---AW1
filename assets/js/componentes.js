@@ -1,13 +1,30 @@
+/* ==========================================================
+   Casa ISA - Componentes reutilizables
+   Etapa 3: el encabezado y el pie se arman una sola vez y se
+   insertan en todas las paginas. Si manana cambia una
+   categoria, se toca solo datos.js.
+   ========================================================== */
+
+/* ----------------------------------------------------------
+   Devuelve el nombre del archivo que se esta viendo,
+   por ejemplo "climatizacion.html". Sirve para marcar en el
+   navbar la pagina actual.
+   ---------------------------------------------------------- */
 function paginaActual() {
   const partes = window.location.pathname.split("/");
   const archivo = partes[partes.length - 1];
   return archivo === "" ? "index.html" : archivo;
 }
 
+/* Compara la direccion de una pagina con la que se ve ahora */
 function esPaginaActual(url) {
   return url.split("/").pop() === paginaActual();
 }
 
+/* ----------------------------------------------------------
+   COMPONENTE: accesos de cuenta
+   Cambia segun haya o no una sesion abierta.
+   ---------------------------------------------------------- */
 function componenteAccesos() {
   const usuario = obtenerUsuario();
 
@@ -22,6 +39,11 @@ function componenteAccesos() {
     .join("\n        ");
 }
 
+/* ----------------------------------------------------------
+   COMPONENTE: encabezado completo
+   Barra de avisos + cabecera con el logo + navbar.
+   El navbar se genera recorriendo el array PAGINAS.
+   ---------------------------------------------------------- */
 function componenteEncabezado() {
   const base = obtenerBase();
 
@@ -47,7 +69,9 @@ function componenteEncabezado() {
       </a>
       <nav class="accesos">
         ${componenteAccesos()}
-        <span class="contador-carrito">Carrito: <strong id="total-carrito">0</strong></span>
+        <a class="enlace-carrito" href="${rutaHacia("pages/carrito.html")}">
+          Carrito <span class="globo" id="contador-carrito">0</span>
+        </a>
       </nav>
     </div>
   </header>
@@ -59,6 +83,10 @@ function componenteEncabezado() {
   </nav>`;
 }
 
+/* ----------------------------------------------------------
+   COMPONENTE: pie de pagina
+   Las categorias tambien salen del array PAGINAS.
+   ---------------------------------------------------------- */
 function componentePie() {
   const base = obtenerBase();
 
@@ -100,6 +128,7 @@ function componentePie() {
             <li>Paso de los Andes 1745</li>
             <li>Villa María, Córdoba</li>
             ${cuenta}
+            <li><a href="${rutaHacia("pages/carrito.html")}">Mi carrito</a></li>
           </ul>
         </div>
       </div>
@@ -108,6 +137,10 @@ function componentePie() {
   </footer>`;
 }
 
+/* ----------------------------------------------------------
+   COMPONENTE: accesos a las categorias del home
+   Tambien se arma recorriendo el array PAGINAS.
+   ---------------------------------------------------------- */
 function componenteCategorias() {
   const base = obtenerBase();
 
@@ -121,6 +154,29 @@ function componenteCategorias() {
     .join("");
 }
 
+/* ----------------------------------------------------------
+   COMPONENTE: franja de beneficios
+   Sale del array BENEFICIOS de datos.js.
+   ---------------------------------------------------------- */
+function componenteBeneficios() {
+  const base = obtenerBase();
+
+  return BENEFICIOS
+    .map(b => `
+        <div class="beneficio">
+          <img src="${base}${b.icono}" alt="" aria-hidden="true">
+          <div>
+            <p class="titulo-beneficio">${b.titulo}</p>
+            <p class="detalle-beneficio">${b.detalle}</p>
+          </div>
+        </div>`)
+    .join("");
+}
+
+/* ----------------------------------------------------------
+   Inserta los componentes en los huecos del HTML y conecta
+   el boton de cerrar sesion.
+   ---------------------------------------------------------- */
 function montarComponentes() {
   const huecoEncabezado = document.getElementById("encabezado");
   const huecoPie = document.getElementById("pie");
@@ -135,6 +191,9 @@ function montarComponentes() {
         cerrarSesion();
       });
     }
+
+    /* El contador del carrito se llena apenas aparece */
+    actualizarContadorCarrito();
   }
 
   if (huecoPie) {
@@ -144,5 +203,10 @@ function montarComponentes() {
   const huecoCategorias = document.getElementById("categorias");
   if (huecoCategorias) {
     huecoCategorias.innerHTML = componenteCategorias();
+  }
+
+  const huecoBeneficios = document.getElementById("beneficios");
+  if (huecoBeneficios) {
+    huecoBeneficios.innerHTML = componenteBeneficios();
   }
 }

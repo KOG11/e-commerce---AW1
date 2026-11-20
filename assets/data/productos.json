@@ -1,0 +1,123 @@
+{
+  "tienda": "Casa ISA",
+  "moneda": "ARS",
+  "cuotasSinInteres": 12,
+  "categorias": [
+    {
+      "slug": "tv-audio-video",
+      "titulo": "Tv, Audio y Video",
+      "icono": "assets/img/ic-tv-audio-video.svg",
+      "productos": [
+        {
+          "id": 101,
+          "titulo": "Smart TV 50\" 4K Ultra HD",
+          "marca": "Samsung",
+          "descripcion": "Pantalla 4K con HDR y sistema operativo Tizen para ver todas tus aplicaciones.",
+          "precio": 749999,
+          "imagen": "assets/img/producto-tv.webp",
+          "stock": 8,
+          "envioGratis": true,
+          "destacado": true
+        },
+        {
+          "id": 102,
+          "titulo": "Barra de Sonido 2.1 con Subwoofer",
+          "marca": "LG",
+          "descripcion": "300W de potencia con subwoofer inalámbrico y conexión Bluetooth.",
+          "precio": 289999,
+          "imagen": "assets/img/producto-barra-sonido.webp",
+          "stock": 15,
+          "envioGratis": false,
+          "destacado": false
+        }
+      ]
+    },
+    {
+      "slug": "celulares-tecnologia",
+      "titulo": "Celulares y Tecnología",
+      "icono": "assets/img/ic-celulares-tecnologia.svg",
+      "productos": [
+        {
+          "id": 201,
+          "titulo": "Galaxy A55 5G 128GB",
+          "marca": "Samsung",
+          "descripcion": "Pantalla Super AMOLED de 6.6 pulgadas, cámara de 50MP y batería de 5000mAh.",
+          "precio": 699999,
+          "imagen": "assets/img/producto-celular.webp",
+          "stock": 12,
+          "envioGratis": true,
+          "destacado": true
+        },
+        {
+          "id": 202,
+          "titulo": "Notebook 15.6\" Core i5 16GB",
+          "marca": "Lenovo",
+          "descripcion": "Procesador Intel Core i5 de 12va generación con 512GB de disco sólido.",
+          "precio": 1249999,
+          "imagen": "assets/img/producto-notebook.webp",
+          "stock": 5,
+          "envioGratis": true,
+          "destacado": false
+        }
+      ]
+    },
+    {
+      "slug": "climatizacion",
+      "titulo": "Climatización",
+      "icono": "assets/img/ic-climatizacion.svg",
+      "productos": [
+        {
+          "id": 301,
+          "titulo": "Aire Split Inverter 3500W Frío/Calor",
+          "marca": "BGH",
+          "descripcion": "Tecnología inverter de bajo consumo, ideal para ambientes de hasta 30 m².",
+          "precio": 899999,
+          "imagen": "assets/img/producto-aire.webp",
+          "stock": 7,
+          "envioGratis": true,
+          "destacado": true
+        },
+        {
+          "id": 302,
+          "titulo": "Ventilador de Pie 20 Pulgadas",
+          "marca": "Liliana",
+          "descripcion": "Tres velocidades, altura regulable y función oscilante.",
+          "precio": 89999,
+          "imagen": "assets/img/producto-ventilador.webp",
+          "stock": 24,
+          "envioGratis": false,
+          "destacado": false
+        }
+      ]
+    },
+    {
+      "slug": "electrodomesticos",
+      "titulo": "Electrodomésticos",
+      "icono": "assets/img/ic-electrodomesticos.svg",
+      "productos": [
+        {
+          "id": 401,
+          "titulo": "Heladera No Frost 430L Inox",
+          "marca": "Whirlpool",
+          "descripcion": "Freezer superior, dispenser de agua y cajón para frutas y verduras.",
+          "precio": 1099999,
+          "imagen": "assets/img/producto-heladera.webp",
+          "stock": 4,
+          "envioGratis": true,
+          "destacado": true
+        },
+        {
+          "id": 402,
+          "titulo": "Lavarropas Automático 8kg 1200rpm",
+          "marca": "Drean",
+          "descripcion": "Carga frontal con 15 programas de lavado y motor de bajo consumo.",
+          "precio": 679999,
+          "imagen": "assets/img/producto-lavarropas.webp",
+          "stock": 9,
+          "envioGratis": false,
+          "destacado": false
+        }
+      ]
+    }
+  ]
+}

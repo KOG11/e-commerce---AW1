@@ -9,6 +9,7 @@
 </head>
 <body>
 
+  <!-- El encabezado lo inserta el componente de componentes.js -->
   <div id="encabezado"></div>
 
   <section class="portada">
@@ -16,15 +17,22 @@
       <div>
         <h1>Todo para tu casa, en un solo lugar</h1>
         <p>Televisores, celulares, aires acondicionados y electrodomésticos con envío a todo el país.</p>
+        <!-- Saludo al usuario logueado, desde sessionStorage -->
+        <div id="bienvenida"></div>
         <div class="acciones-portada">
           <a class="boton boton-principal" href="pages/tv-audio-video.html">Ver productos</a>
-          <span class="pastilla">Hasta 12 cuotas sin interés</span>
+          <a class="boton boton-claro" href="pages/electrodomesticos.html">Ver electrodomésticos</a>
         </div>
       </div>
       <div class="imagen-portada">
         <img src="assets/img/portada.svg" alt="Living equipado con televisor y aire acondicionado">
       </div>
     </div>
+  </section>
+
+  <!-- Beneficios de la tienda, desde el array BENEFICIOS -->
+  <section class="franja-beneficios">
+    <div class="contenedor" id="beneficios"></div>
   </section>
 
   <section class="seccion">
@@ -37,9 +45,45 @@
 
   <section class="seccion seccion-clara">
     <div class="contenedor">
-      <h2 class="titulo-seccion">Productos destacados</h2>
-      <!-- Las cards las dibuja el componente de cards.js -->
-      <div class="grilla-productos" id="productos" data-categoria="destacados"></div>
+      <div class="encabezado-seccion">
+        <h2>Tv, Audio y Video</h2>
+        <a class="ver-todos" href="pages/tv-audio-video.html">Ver todos</a>
+      </div>
+      <!-- Las cards las dibuja cards.js con los datos del JSON -->
+      <div class="grilla-productos" data-categoria="tv-audio-video"></div>
+    </div>
+  </section>
+
+  <section class="seccion">
+    <div class="contenedor">
+      <div class="encabezado-seccion">
+        <h2>Celulares y Tecnología</h2>
+        <a class="ver-todos" href="pages/celulares-tecnologia.html">Ver todos</a>
+      </div>
+      <!-- Las cards las dibuja cards.js con los datos del JSON -->
+      <div class="grilla-productos" data-categoria="celulares-tecnologia"></div>
+    </div>
+  </section>
+
+  <section class="seccion seccion-clara">
+    <div class="contenedor">
+      <div class="encabezado-seccion">
+        <h2>Climatización</h2>
+        <a class="ver-todos" href="pages/climatizacion.html">Ver todos</a>
+      </div>
+      <!-- Las cards las dibuja cards.js con los datos del JSON -->
+      <div class="grilla-productos" data-categoria="climatizacion"></div>
+    </div>
+  </section>
+
+  <section class="seccion">
+    <div class="contenedor">
+      <div class="encabezado-seccion">
+        <h2>Electrodomésticos</h2>
+        <a class="ver-todos" href="pages/electrodomesticos.html">Ver todos</a>
+      </div>
+      <!-- Las cards las dibuja cards.js con los datos del JSON -->
+      <div class="grilla-productos" data-categoria="electrodomesticos"></div>
     </div>
   </section>
 
@@ -48,8 +92,12 @@
 
   <script src="assets/js/datos.js"></script>
   <script src="assets/js/sesion.js"></script>
+  <script src="assets/js/carrito.js"></script>
+  <script src="assets/js/api.js"></script>
   <script src="assets/js/componentes.js"></script>
   <script src="assets/js/cards.js"></script>
+  <script src="assets/js/vista-carrito.js"></script>
+  <script src="assets/js/vista-producto.js"></script>
   <script src="assets/js/app.js"></script>
 </body>
 </html>

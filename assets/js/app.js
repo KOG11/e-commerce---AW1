@@ -1,19 +1,90 @@
-document.addEventListener("DOMContentLoaded", function () {
+/* ==========================================================
+   Casa ISA - Punto de entrada
+   Etapa 4: se ejecuta en todas las paginas, monta los
+   componentes, pide los datos al JSON y conecta lo que esa
+   pagina necesite.
+   ========================================================== */
 
+document.addEventListener("DOMContentLoaded", async function () {
+
+  /* 1. Encabezado y pie, en todas las paginas */
   montarComponentes();
 
-  const contenedorProductos = document.getElementById("productos");
+  /* 2. Saludo del home cuando hay una sesion abierta */
+  mostrarBienvenida();
 
-  if (contenedorProductos) {
-    const categoria = contenedorProductos.dataset.categoria;
+  /* 3. Productos, si la pagina tiene donde mostrarlos */
+  await cargarProductosDeLaPagina();
 
-    const lista = (categoria === "destacados")
-      ? PRODUCTOS.filter(p => p.destacado)
-      : PRODUCTOS.filter(p => p.categoria === categoria);
+  /* 4. Ficha de producto, si estamos en esa pagina */
+  await mostrarFichaProducto();
 
-    mostrarProductos(contenedorProductos, lista);
-    actualizarTotalCarrito();
+  /* 5. Carrito, si estamos en esa pagina */
+  mostrarCarrito();
+
+  /* 6. Formularios de login y registro */
+  conectarFormularios();
+});
+
+/* ----------------------------------------------------------
+   Saludo personalizado en el home.
+   Los datos salen de sessionStorage.
+   ---------------------------------------------------------- */
+function mostrarBienvenida() {
+  const hueco = document.getElementById("bienvenida");
+
+  if (!hueco) {
+    return;
   }
+
+  const usuario = obtenerUsuario();
+
+  if (usuario) {
+    hueco.innerHTML = `
+      <p class="bienvenida">Hola de nuevo, ${usuario.nombre}. Mirá lo que tenemos para vos.</p>`;
+  }
+}
+
+/* ----------------------------------------------------------
+   Carga de productos.
+   El home tiene una grilla por categoria; cada pagina de
+   categoria tiene una sola. Las dos se resuelven igual:
+   buscando los contenedores que declaran data-categoria.
+   ---------------------------------------------------------- */
+async function cargarProductosDeLaPagina() {
+  const contenedores = document.querySelectorAll("[data-categoria]");
+
+  if (contenedores.length === 0) {
+    return;
+  }
+
+  try {
+    const productos = await obtenerProductos();
+
+    contenedores.forEach(contenedor => {
+      const slug = contenedor.dataset.categoria;
+
+      const lista = (slug === "destacados")
+        ? productos.filter(p => p.destacado)
+        : productos.filter(p => p.categoria === slug);
+
+      mostrarProductos(contenedor, lista);
+    });
+
+  } catch (error) {
+    console.error("Error al cargar el catálogo:", error);
+
+    contenedores.forEach(contenedor => {
+      contenedor.innerHTML = mensajeDeError();
+    });
+  }
+}
+
+/* ----------------------------------------------------------
+   Login y registro.
+   JavaScript intercepta el envio y resuelve la redireccion.
+   ---------------------------------------------------------- */
+function conectarFormularios() {
 
   const formLogin = document.getElementById("form-login");
 
@@ -43,5 +114,4 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   }
-
-});
+}

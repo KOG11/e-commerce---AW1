@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Casa ISA - Mi carrito</title>
+  <link rel="icon" href="../assets/img/logo-icono.svg">
+  <link rel="stylesheet" href="../assets/css/estilos.css">
+</head>
+<body>
+
+  <!-- El encabezado lo inserta el componente de componentes.js -->
+  <div id="encabezado"></div>
+
+  <section class="seccion">
+    <div class="contenedor">
+      <h1>Mi carrito</h1>
+      <!-- vista-carrito.js lo llena con lo guardado en localStorage -->
+      <div class="pagina-carrito" id="detalle-carrito"></div>
+    </div>
+  </section>
+
+  <!-- El pie tambien se arma desde JavaScript -->
+  <div id="pie"></div>
+
+  <script src="../assets/js/datos.js"></script>
+  <script src="../assets/js/sesion.js"></script>
+  <script src="../assets/js/carrito.js"></script>
+  <script src="../assets/js/api.js"></script>
+  <script src="../assets/js/componentes.js"></script>
+  <script src="../assets/js/cards.js"></script>
+  <script src="../assets/js/vista-carrito.js"></script>
+  <script src="../assets/js/vista-producto.js"></script>
+  <script src="../assets/js/app.js"></script>
+</body>
+</html>

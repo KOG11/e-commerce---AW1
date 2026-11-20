@@ -1,3 +1,10 @@
+/* ==========================================================
+   Casa ISA - Hoja de estilos principal
+   Etapa 2 del trabajo practico: identidad visual y layout
+   ========================================================== */
+
+/* ----- 1. Paleta y variables de la marca ----------------- */
+
 :root {
   --azul-tinta: #0B2E5C;
   --azul: #1D5FB5;
@@ -14,6 +21,8 @@
   --radio: 8px;
   --sombra: 0 2px 8px rgba(11, 46, 92, 0.08);
 }
+
+/* ----- 2. Reset basico ----------------------------------- */
 
 * {
   margin: 0;
@@ -48,18 +57,22 @@ a {
   color: var(--azul);
 }
 
+/* Contenedor centrado que usan todas las secciones */
 .contenedor {
   max-width: var(--ancho-maximo);
   margin: 0 auto;
   padding: 0 20px;
 }
 
+/* Foco visible para quien navega con el teclado */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible {
   outline: 3px solid var(--azul);
   outline-offset: 2px;
 }
+
+/* ----- 3. Barra superior de avisos ----------------------- */
 
 .barra-avisos {
   background-color: var(--azul-tinta);
@@ -74,6 +87,8 @@ input:focus-visible {
   flex-wrap: wrap;
   gap: 12px;
 }
+
+/* ----- 4. Cabecera con el logo y los accesos ------------- */
 
 .cabecera {
   border-bottom: 1px solid var(--gris-borde);
@@ -115,13 +130,45 @@ input:focus-visible {
   color: var(--azul-tinta);
 }
 
-.contador-carrito {
+/* Enlace al carrito con el globito de unidades */
+.enlace-carrito {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   background-color: var(--azul-claro);
-  color: var(--azul-tinta);
   border-radius: 999px;
-  padding: 6px 16px;
-  font-size: 0.875rem;
+  padding: 7px 16px;
 }
+
+.accesos .enlace-carrito {
+  color: var(--azul-tinta);
+  text-decoration: none;
+}
+
+.enlace-carrito:hover {
+  background-color: var(--azul);
+}
+
+.accesos .enlace-carrito:hover {
+  color: var(--blanco);
+  text-decoration: none;
+}
+
+.globo {
+  background-color: var(--azul);
+  color: var(--blanco);
+  border-radius: 999px;
+  min-width: 22px;
+  padding: 1px 7px;
+  text-align: center;
+  font-size: 0.8125rem;
+}
+
+.enlace-carrito:hover .globo {
+  background-color: var(--azul-tinta);
+}
+
+/* ----- 5. Navbar de categorias --------------------------- */
 
 .navbar {
   background-color: var(--azul);
@@ -151,25 +198,30 @@ input:focus-visible {
   background-color: var(--azul-tinta);
 }
 
+/* ----- 6. Portada del home ------------------------------- */
+
 .portada {
   background-color: var(--azul-claro);
-  padding: 48px 0;
+  padding: 40px 0;
 }
 
 .portada .contenedor {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
+  /* La columna de texto manda; la ilustracion acompaña */
+  grid-template-columns: 1.05fr 1fr;
+  gap: 40px;
   align-items: center;
 }
 
 .portada h1 {
-  max-width: 14ch;
+  /* Ancho pensado para que el titulo entre en dos lineas */
+  max-width: 19ch;
+  letter-spacing: -0.5px;
 }
 
 .portada p {
-  margin: 16px 0 28px;
-  max-width: 46ch;
+  margin: 14px 0 24px;
+  max-width: 44ch;
   font-size: 1.0625rem;
 }
 
@@ -180,6 +232,7 @@ input:focus-visible {
   gap: 16px;
 }
 
+/* Dato de financiacion al lado del boton */
 .pastilla {
   background-color: var(--blanco);
   border: 1px solid var(--gris-borde);
@@ -194,6 +247,7 @@ input:focus-visible {
   width: 100%;
 }
 
+/* ----- 7. Botones ---------------------------------------- */
 
 .boton {
   display: inline-block;
@@ -229,9 +283,49 @@ input:focus-visible {
   text-align: center;
 }
 
+/* ----- 7b. Franja de beneficios -------------------------- */
+
+.franja-beneficios {
+  border-bottom: 1px solid var(--gris-borde);
+}
+
+.franja-beneficios .contenedor {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+  padding-top: 22px;
+  padding-bottom: 22px;
+}
+
+.beneficio {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.beneficio img {
+  width: 30px;
+  height: 30px;
+  flex: 0 0 auto;
+}
+
+.titulo-beneficio {
+  font-family: var(--fuente-titulos);
+  font-size: 0.9375rem;
+  color: var(--azul-tinta);
+  line-height: 1.3;
+}
+
+.detalle-beneficio {
+  font-size: 0.8125rem;
+  line-height: 1.4;
+}
+
+/* ----- 8. Secciones genericas ---------------------------- */
 
 .seccion {
-  padding: 48px 0;
+  padding: 44px 0;
 }
 
 .seccion-clara {
@@ -242,19 +336,23 @@ input:focus-visible {
   margin-bottom: 24px;
 }
 
+/* ----- 9. Accesos a las categorias (home) ---------------- */
 
 .grilla-categorias {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 16px;
 }
 
+/* Icono y nombre en una linea: ocupa menos alto y se lee igual */
 .tarjeta-categoria {
+  display: flex;
+  align-items: center;
+  gap: 16px;
   background-color: var(--azul-humo);
   border: 1px solid var(--gris-borde);
   border-radius: var(--radio);
-  padding: 36px 20px;
-  text-align: center;
+  padding: 16px 18px;
   text-decoration: none;
 }
 
@@ -264,9 +362,9 @@ input:focus-visible {
 }
 
 .marco-icono {
-  width: 76px;
-  height: 76px;
-  margin: 0 auto 16px;
+  flex: 0 0 auto;
+  width: 52px;
+  height: 52px;
   background-color: var(--blanco);
   border: 1px solid var(--gris-borde);
   border-radius: var(--radio);
@@ -276,20 +374,25 @@ input:focus-visible {
 }
 
 .marco-icono img {
-  width: 40px;
-  height: 40px;
+  width: 28px;
+  height: 28px;
 }
 
 .tarjeta-categoria span {
   font-family: var(--fuente-titulos);
-  font-size: 1.0625rem;
+  font-size: 1rem;
+  line-height: 1.25;
   color: var(--azul-tinta);
 }
 
+/* ----- 10. Grilla y card de producto --------------------- */
 
 .grilla-productos {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  /* Tope de ancho para que con pocos productos las cards no
+     se estiren y pierdan proporcion */
+  grid-template-columns: repeat(auto-fill, minmax(250px, 320px));
+  justify-content: start;
   gap: 24px;
 }
 
@@ -309,6 +412,7 @@ input:focus-visible {
 
 .card-producto .imagen {
   position: relative;
+  display: block;
   background-color: var(--azul-humo);
   padding: 24px;
 }
@@ -319,6 +423,7 @@ input:focus-visible {
   width: auto;
 }
 
+/* Distintivo sobre la foto del producto */
 .distintivo {
   position: absolute;
   top: 12px;
@@ -349,6 +454,16 @@ input:focus-visible {
   margin-bottom: 6px;
 }
 
+.card-producto .nombre a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.card-producto .nombre a:hover {
+  color: var(--azul);
+  text-decoration: underline;
+}
+
 .card-producto .descripcion {
   font-size: 0.875rem;
   line-height: 1.5;
@@ -373,6 +488,7 @@ input:focus-visible {
   margin-top: auto;
 }
 
+/* Control para aumentar o disminuir unidades */
 .control-cantidad {
   margin-top: auto;
   display: flex;
@@ -411,6 +527,7 @@ input:focus-visible {
   padding: 10px 0;
 }
 
+/* Aviso que ocupa el lugar de las cards todavia sin cargar */
 .sin-productos {
   grid-column: 1 / -1;
   border: 1px dashed var(--gris-borde);
@@ -419,6 +536,7 @@ input:focus-visible {
   text-align: center;
 }
 
+/* ----- 11. Formularios de login y registro --------------- */
 
 .pantalla-formulario {
   background: linear-gradient(135deg, var(--azul-tinta), var(--azul));
@@ -478,6 +596,7 @@ input:focus-visible {
   text-align: center;
 }
 
+/* ----- 12. Pie de pagina --------------------------------- */
 
 .pie {
   background-color: var(--azul-tinta);
@@ -486,6 +605,7 @@ input:focus-visible {
   margin-top: 48px;
 }
 
+/* Pegado al degradado del formulario, sin franja blanca en el medio */
 .pantalla-formulario + .pie {
   margin-top: 0;
 }
@@ -536,11 +656,12 @@ input:focus-visible {
   font-size: 0.8125rem;
 }
 
+/* ----- 13. Ajustes para pantallas chicas ----------------- */
 
 @media (max-width: 900px) {
   .portada .contenedor {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 28px;
   }
 
   .portada h1,
@@ -573,5 +694,399 @@ input:focus-visible {
 
   .caja-formulario {
     padding: 28px 22px;
+  }
+}
+
+
+/* ----- 14. Encabezado de seccion con enlace ------------- */
+
+.encabezado-seccion {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.ver-todos {
+  font-size: 0.9375rem;
+  text-decoration: none;
+}
+
+.ver-todos:hover {
+  text-decoration: underline;
+}
+
+/* Saludo al usuario logueado, en la portada */
+.bienvenida {
+  background-color: var(--blanco);
+  border-left: 4px solid var(--azul);
+  border-radius: 0;
+  padding: 10px 16px;
+  margin-bottom: 20px;
+  font-size: 0.9375rem;
+  color: var(--azul-tinta);
+}
+
+/* ----- 15. Boton de agregar al carrito ------------------ */
+
+.boton-agregar {
+  margin-top: 12px;
+}
+
+.boton-agregado {
+  background-color: var(--azul-tinta);
+}
+
+.boton:disabled {
+  cursor: default;
+}
+
+.boton-texto {
+  background-color: transparent;
+  color: var(--azul);
+  padding: 10px 20px;
+}
+
+.boton-texto:hover {
+  background-color: var(--azul-claro);
+}
+
+/* ----- 16. Pagina del carrito --------------------------- */
+
+.pagina-carrito {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 32px;
+  align-items: start;
+  margin-top: 24px;
+}
+
+.lista-carrito {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.fila-carrito {
+  display: grid;
+  grid-template-columns: 90px 1fr auto auto auto;
+  align-items: center;
+  gap: 20px;
+  background-color: var(--blanco);
+  border: 1px solid var(--gris-borde);
+  border-radius: var(--radio);
+  padding: 16px;
+}
+
+.miniatura {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  background-color: var(--azul-humo);
+  border-radius: var(--radio);
+}
+
+.datos-fila h3 {
+  font-size: 1rem;
+  margin: 2px 0 4px;
+}
+
+.precio-unitario {
+  font-size: 0.875rem;
+}
+
+.control-chico .boton-cantidad {
+  font-size: 1rem;
+  padding: 6px 12px;
+}
+
+.control-chico .cantidad {
+  padding: 6px 14px;
+  font-size: 0.9375rem;
+}
+
+.subtotal {
+  font-family: var(--fuente-titulos);
+  font-size: 1.25rem;
+  color: var(--azul-tinta);
+  min-width: 120px;
+  text-align: right;
+}
+
+.boton-eliminar {
+  font-family: var(--fuente-texto);
+  font-size: 0.875rem;
+  color: var(--gris-texto);
+  background: none;
+  border: 1px solid var(--gris-borde);
+  border-radius: var(--radio);
+  padding: 8px 14px;
+  cursor: pointer;
+}
+
+.boton-eliminar:hover {
+  border-color: var(--azul);
+  color: var(--azul);
+}
+
+/* Resumen de la compra, a la derecha */
+.resumen-carrito {
+  background-color: var(--azul-humo);
+  border: 1px solid var(--gris-borde);
+  border-radius: var(--radio);
+  padding: 24px;
+  position: sticky;
+  top: 20px;
+}
+
+.resumen-carrito h2 {
+  font-size: 1.25rem;
+  margin-bottom: 18px;
+}
+
+.linea-resumen,
+.linea-total {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 0.9375rem;
+  margin-bottom: 10px;
+}
+
+.linea-total {
+  border-top: 1px solid var(--gris-borde);
+  margin-top: 16px;
+  padding-top: 16px;
+  font-family: var(--fuente-titulos);
+  font-size: 1.375rem;
+  color: var(--azul-tinta);
+}
+
+.resumen-carrito .cuotas {
+  font-size: 0.875rem;
+  color: var(--azul);
+  margin-bottom: 20px;
+}
+
+.resumen-carrito .boton {
+  margin-bottom: 8px;
+}
+
+/* Carrito sin productos y compra confirmada */
+.carrito-vacio,
+.compra-confirmada {
+  grid-column: 1 / -1;
+  background-color: var(--azul-humo);
+  border: 1px solid var(--gris-borde);
+  border-radius: var(--radio);
+  padding: 56px 24px;
+  text-align: center;
+}
+
+.carrito-vacio h2,
+.compra-confirmada h2 {
+  margin-bottom: 10px;
+}
+
+.carrito-vacio .boton,
+.compra-confirmada .boton {
+  margin-top: 20px;
+}
+
+.compra-confirmada p {
+  max-width: 48ch;
+  margin: 0 auto 4px;
+}
+
+/* ----- 17. Avisos de error ------------------------------ */
+
+.aviso {
+  grid-column: 1 / -1;
+  border-radius: var(--radio);
+  padding: 28px 24px;
+  text-align: center;
+}
+
+.aviso-error {
+  background-color: var(--azul-humo);
+  border: 1px dashed var(--gris-borde);
+}
+
+.aviso h3 {
+  margin-bottom: 10px;
+}
+
+.aviso p {
+  max-width: 56ch;
+  margin: 0 auto 6px;
+  font-size: 0.9375rem;
+}
+
+/* ----- 18. Carrito en pantallas chicas ------------------ */
+
+@media (max-width: 900px) {
+  .pagina-carrito {
+    grid-template-columns: 1fr;
+  }
+
+  .resumen-carrito {
+    position: static;
+  }
+}
+
+@media (max-width: 700px) {
+  .fila-carrito {
+    grid-template-columns: 70px 1fr;
+    gap: 14px;
+  }
+
+  .miniatura {
+    width: 70px;
+    height: 70px;
+  }
+
+  .fila-carrito .control-cantidad,
+  .fila-carrito .subtotal,
+  .fila-carrito .boton-eliminar {
+    grid-column: 2;
+    justify-self: start;
+    text-align: left;
+  }
+}
+
+
+/* ----- 19. Ficha de producto ---------------------------- */
+
+/* Ruta de navegacion arriba de la ficha */
+.migas {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  margin-bottom: 28px;
+}
+
+.migas a {
+  text-decoration: none;
+}
+
+.migas a:hover {
+  text-decoration: underline;
+}
+
+.migas span[aria-hidden] {
+  color: var(--gris-borde);
+}
+
+.miga-actual {
+  color: var(--gris-texto);
+}
+
+.detalle-producto {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.foto-grande {
+  background-color: var(--azul-humo);
+  border: 1px solid var(--gris-borde);
+  border-radius: var(--radio);
+  padding: 40px;
+}
+
+.foto-grande img {
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.info-producto h1 {
+  font-size: 1.875rem;
+  margin: 4px 0 20px;
+}
+
+.precio-grande {
+  font-family: var(--fuente-titulos);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--azul-tinta);
+  line-height: 1.1;
+}
+
+.info-producto .cuotas {
+  font-size: 1rem;
+  color: var(--azul);
+  margin-bottom: 24px;
+}
+
+.descripcion-larga {
+  font-size: 1rem;
+  max-width: 52ch;
+  margin-bottom: 24px;
+}
+
+/* Datos de envio, stock y garantia */
+.datos-producto {
+  list-style: none;
+  border-top: 1px solid var(--gris-borde);
+  border-bottom: 1px solid var(--gris-borde);
+  padding: 18px 0;
+  margin-bottom: 28px;
+}
+
+.datos-producto li {
+  font-size: 0.9375rem;
+  padding: 4px 0;
+}
+
+.dato-envio {
+  color: var(--azul);
+}
+
+.dato-agotado {
+  color: var(--gris-texto);
+}
+
+/* Cantidad y boton, uno al lado del otro */
+.compra {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 16px;
+}
+
+.compra .control-cantidad {
+  flex: 0 0 auto;
+  min-width: 140px;
+  margin-top: 0;
+}
+
+.compra .boton {
+  flex: 1 1 200px;
+}
+
+/* ----- 20. Ficha en pantallas chicas -------------------- */
+
+@media (max-width: 900px) {
+  .detalle-producto {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .foto-grande {
+    padding: 28px;
+  }
+
+  .info-producto h1 {
+    font-size: 1.5rem;
+  }
+
+  .precio-grande {
+    font-size: 2rem;
   }
 }

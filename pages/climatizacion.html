@@ -9,21 +9,27 @@
 </head>
 <body>
 
+  <!-- El encabezado lo inserta el componente de componentes.js -->
   <div id="encabezado"></div>
 
   <section class="seccion">
     <div class="contenedor">
       <h1>Climatización</h1>
-      <div class="grilla-productos grilla-con-aire" id="productos" data-categoria="climatizacion"></div>
+      <div class="grilla-productos grilla-con-aire" data-categoria="climatizacion"></div>
     </div>
   </section>
 
+  <!-- El pie tambien se arma desde JavaScript -->
   <div id="pie"></div>
 
   <script src="../assets/js/datos.js"></script>
   <script src="../assets/js/sesion.js"></script>
+  <script src="../assets/js/carrito.js"></script>
+  <script src="../assets/js/api.js"></script>
   <script src="../assets/js/componentes.js"></script>
   <script src="../assets/js/cards.js"></script>
+  <script src="../assets/js/vista-carrito.js"></script>
+  <script src="../assets/js/vista-producto.js"></script>
   <script src="../assets/js/app.js"></script>
 </body>
 </html>
