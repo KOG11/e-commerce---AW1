@@ -1,35 +1,17 @@
-/* ==========================================================
-   Casa ISA - Punto de entrada
-   Etapa 4: se ejecuta en todas las paginas, monta los
-   componentes, pide los datos al JSON y conecta lo que esa
-   pagina necesite.
-   ========================================================== */
-
 document.addEventListener("DOMContentLoaded", async function () {
-
-  /* 1. Encabezado y pie, en todas las paginas */
   montarComponentes();
 
-  /* 2. Saludo del home cuando hay una sesion abierta */
   mostrarBienvenida();
 
-  /* 3. Productos, si la pagina tiene donde mostrarlos */
   await cargarProductosDeLaPagina();
 
-  /* 4. Ficha de producto, si estamos en esa pagina */
   await mostrarFichaProducto();
 
-  /* 5. Carrito, si estamos en esa pagina */
   mostrarCarrito();
 
-  /* 6. Formularios de login y registro */
   conectarFormularios();
 });
 
-/* ----------------------------------------------------------
-   Saludo personalizado en el home.
-   Los datos salen de sessionStorage.
-   ---------------------------------------------------------- */
 function mostrarBienvenida() {
   const hueco = document.getElementById("bienvenida");
 
@@ -45,12 +27,6 @@ function mostrarBienvenida() {
   }
 }
 
-/* ----------------------------------------------------------
-   Carga de productos.
-   El home tiene una grilla por categoria; cada pagina de
-   categoria tiene una sola. Las dos se resuelven igual:
-   buscando los contenedores que declaran data-categoria.
-   ---------------------------------------------------------- */
 async function cargarProductosDeLaPagina() {
   const contenedores = document.querySelectorAll("[data-categoria]");
 
@@ -80,12 +56,7 @@ async function cargarProductosDeLaPagina() {
   }
 }
 
-/* ----------------------------------------------------------
-   Login y registro.
-   JavaScript intercepta el envio y resuelve la redireccion.
-   ---------------------------------------------------------- */
 function conectarFormularios() {
-
   const formLogin = document.getElementById("form-login");
 
   if (formLogin) {

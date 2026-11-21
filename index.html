@@ -9,7 +9,6 @@
 </head>
 <body>
 
-  <!-- El encabezado lo inserta el componente de componentes.js -->
   <div id="encabezado"></div>
 
   <section class="portada">
@@ -17,7 +16,6 @@
       <div>
         <h1>Todo para tu casa, en un solo lugar</h1>
         <p>Televisores, celulares, aires acondicionados y electrodomésticos con envío a todo el país.</p>
-        <!-- Saludo al usuario logueado, desde sessionStorage -->
         <div id="bienvenida"></div>
         <div class="acciones-portada">
           <a class="boton boton-principal" href="pages/tv-audio-video.html">Ver productos</a>
@@ -30,7 +28,6 @@
     </div>
   </section>
 
-  <!-- Beneficios de la tienda, desde el array BENEFICIOS -->
   <section class="franja-beneficios">
     <div class="contenedor" id="beneficios"></div>
   </section>
@@ -38,7 +35,6 @@
   <section class="seccion">
     <div class="contenedor">
       <h2 class="titulo-seccion">Comprá por categoría</h2>
-      <!-- Las tarjetas salen del array PAGINAS -->
       <div class="grilla-categorias" id="categorias"></div>
     </div>
   </section>
@@ -49,7 +45,6 @@
         <h2>Tv, Audio y Video</h2>
         <a class="ver-todos" href="pages/tv-audio-video.html">Ver todos</a>
       </div>
-      <!-- Las cards las dibuja cards.js con los datos del JSON -->
       <div class="grilla-productos" data-categoria="tv-audio-video"></div>
     </div>
   </section>
@@ -60,7 +55,6 @@
         <h2>Celulares y Tecnología</h2>
         <a class="ver-todos" href="pages/celulares-tecnologia.html">Ver todos</a>
       </div>
-      <!-- Las cards las dibuja cards.js con los datos del JSON -->
       <div class="grilla-productos" data-categoria="celulares-tecnologia"></div>
     </div>
   </section>
@@ -71,7 +65,6 @@
         <h2>Climatización</h2>
         <a class="ver-todos" href="pages/climatizacion.html">Ver todos</a>
       </div>
-      <!-- Las cards las dibuja cards.js con los datos del JSON -->
       <div class="grilla-productos" data-categoria="climatizacion"></div>
     </div>
   </section>
@@ -82,12 +75,10 @@
         <h2>Electrodomésticos</h2>
         <a class="ver-todos" href="pages/electrodomesticos.html">Ver todos</a>
       </div>
-      <!-- Las cards las dibuja cards.js con los datos del JSON -->
       <div class="grilla-productos" data-categoria="electrodomesticos"></div>
     </div>
   </section>
 
-  <!-- El pie tambien se arma desde JavaScript -->
   <div id="pie"></div>
 
   <script src="assets/js/datos.js"></script>

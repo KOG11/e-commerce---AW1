@@ -1,14 +1,3 @@
-/* ==========================================================
-   Casa ISA - Ficha de producto
-   Cada producto tiene su propia direccion:
-   pages/producto.html?id=101
-   El id viaja en la URL, se lee con URLSearchParams y con el
-   se busca el producto en el catalogo.
-   ========================================================== */
-
-/* ----------------------------------------------------------
-   Dibuja la ficha completa.
-   ---------------------------------------------------------- */
 async function mostrarFichaProducto() {
   const contenedor = document.getElementById("ficha-producto");
 
@@ -16,7 +5,6 @@ async function mostrarFichaProducto() {
     return;
   }
 
-  /* El id llega en la direccion: ?id=101 */
   const parametros = new URLSearchParams(window.location.search);
   const id = parametros.get("id");
 
@@ -46,14 +34,10 @@ async function mostrarFichaProducto() {
   }
 }
 
-/* ----------------------------------------------------------
-   COMPONENTE: la ficha
-   ---------------------------------------------------------- */
 function componenteFicha(producto) {
   const base = obtenerBase();
   const cuota = Math.round(producto.precio / 12);
 
-  /* Direccion de la categoria a la que pertenece */
   const categoria = PAGINAS.find(p => p.slug === producto.categoria);
   const urlCategoria = categoria ? rutaHacia(categoria.url) : rutaHacia("index.html");
 
@@ -112,13 +96,6 @@ function componenteFicha(producto) {
     ${componenteEspecificaciones(producto)}`;
 }
 
-/* ----------------------------------------------------------
-   COMPONENTE: tabla de especificaciones
-   Recorre el objeto especificaciones del producto. Cada clave
-   es el nombre del dato y cada valor su contenido.
-   Los valores con varios items vienen separados por " / " y
-   se muestran como lista.
-   ---------------------------------------------------------- */
 function componenteEspecificaciones(producto) {
   if (!producto.especificaciones) {
     return "";
@@ -149,7 +126,6 @@ function componenteEspecificaciones(producto) {
     </section>`;
 }
 
-/* Un valor con varios items se muestra como lista */
 function formatearValor(valor) {
   const partes = String(valor).split(" / ");
 
@@ -160,7 +136,6 @@ function formatearValor(valor) {
   return "<ul>" + partes.map(p => `<li>${p}</li>`).join("") + "</ul>";
 }
 
-/* Pantalla para cuando el producto no existe */
 function fichaNoEncontrada(motivo) {
   return `
     <div class="aviso aviso-error">
@@ -170,9 +145,6 @@ function fichaNoEncontrada(motivo) {
     </div>`;
 }
 
-/* ----------------------------------------------------------
-   Botones de la ficha
-   ---------------------------------------------------------- */
 function conectarFicha(producto) {
   let cantidad = 1;
   const etiqueta = document.getElementById("cantidad-ficha");
@@ -196,9 +168,6 @@ function conectarFicha(producto) {
   });
 }
 
-/* ----------------------------------------------------------
-   Otros productos de la misma categoria
-   ---------------------------------------------------------- */
 async function mostrarRelacionados(producto) {
   const contenedor = document.getElementById("relacionados");
 

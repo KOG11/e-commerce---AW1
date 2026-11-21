@@ -1,12 +1,3 @@
-/* ==========================================================
-   Casa ISA - Pantalla del carrito
-   Etapa 4: muestra lo que el usuario fue agregando, deja
-   cambiar cantidades y eliminar productos.
-   ========================================================== */
-
-/* ----------------------------------------------------------
-   Dibuja el carrito completo dentro de su contenedor.
-   ---------------------------------------------------------- */
 function mostrarCarrito() {
   const contenedor = document.getElementById("detalle-carrito");
 
@@ -86,13 +77,7 @@ function mostrarCarrito() {
   conectarAccionesDelCarrito(contenedor);
 }
 
-/* ----------------------------------------------------------
-   Conecta los botones de cada fila y del resumen.
-   Despues de cada cambio se vuelve a dibujar todo, asi los
-   subtotales y el total quedan siempre al dia.
-   ---------------------------------------------------------- */
 function conectarAccionesDelCarrito(contenedor) {
-
   contenedor.querySelectorAll(".boton-cantidad").forEach(boton => {
     boton.addEventListener("click", function () {
       const id = Number(this.dataset.id);
@@ -132,11 +117,6 @@ function conectarAccionesDelCarrito(contenedor) {
   }
 }
 
-/* ----------------------------------------------------------
-   Cierre de la compra.
-   No hay servidor que procese el pedido, asi que se confirma
-   en pantalla y se vacia el carrito.
-   ---------------------------------------------------------- */
 function finalizarCompra() {
   const usuario = obtenerUsuario();
   const total = formatearPrecio(totalAPagar());

@@ -1,26 +1,9 @@
-/* ==========================================================
-   Casa ISA - Componente de card de producto
-   Etapa 4: la card se arma con los datos que llegan del JSON
-   y suma el boton para agregar la cantidad elegida al
-   carrito.
-   ========================================================== */
-
-/* Cantidad elegida en cada card, antes de agregarla al
-   carrito: { idProducto: cantidad } */
 const cantidadesElegidas = {};
 
-/* ----------------------------------------------------------
-   Formatea un numero como precio argentino.
-   1249999 se convierte en "$ 1.249.999"
-   ---------------------------------------------------------- */
 function formatearPrecio(numero) {
   return "$ " + numero.toLocaleString("es-AR");
 }
 
-/* ----------------------------------------------------------
-   COMPONENTE: una card de producto
-   Recibe un objeto del catalogo y devuelve el HTML.
-   ---------------------------------------------------------- */
 function componenteCard(producto) {
   const base = obtenerBase();
   const cuota = Math.round(producto.precio / 12);
@@ -29,7 +12,6 @@ function componenteCard(producto) {
     ? '<span class="distintivo">Envío gratis</span>'
     : "";
 
-  /* Cada producto tiene su propia direccion, con el id en la URL */
   const ficha = rutaHacia("pages/producto.html") + "?id=" + producto.id;
 
   return `
@@ -58,9 +40,6 @@ function componenteCard(producto) {
     </article>`;
 }
 
-/* ----------------------------------------------------------
-   Dibuja una lista de productos dentro de un contenedor.
-   ---------------------------------------------------------- */
 function mostrarProductos(contenedor, listaProductos) {
   if (listaProductos.length === 0) {
     contenedor.innerHTML = `
@@ -73,7 +52,6 @@ function mostrarProductos(contenedor, listaProductos) {
 
   contenedor.innerHTML = listaProductos.map(componenteCard).join("\n");
 
-  /* Cada card arranca en una unidad */
   listaProductos.forEach(p => {
     if (cantidadesElegidas[p.id] === undefined) {
       cantidadesElegidas[p.id] = 1;
@@ -83,10 +61,6 @@ function mostrarProductos(contenedor, listaProductos) {
 
   conectarBotones(contenedor, listaProductos);
 }
-
-/* ----------------------------------------------------------
-   Botones de cantidad y de agregar al carrito
-   ---------------------------------------------------------- */
 
 function conectarBotones(contenedor, listaProductos) {
   contenedor.querySelectorAll(".boton-cantidad").forEach(boton => {
@@ -114,7 +88,6 @@ function conectarBotones(contenedor, listaProductos) {
   });
 }
 
-/* Refresca el numero que se ve en la card */
 function pintarCantidad(id) {
   const etiqueta = document.getElementById("cantidad-" + id);
 
@@ -123,7 +96,6 @@ function pintarCantidad(id) {
   }
 }
 
-/* Avisa en el propio boton que el producto se agrego */
 function confirmarAgregado(boton) {
   boton.textContent = "Agregado al carrito";
   boton.classList.add("boton-agregado");

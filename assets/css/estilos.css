@@ -1,10 +1,3 @@
-/* ==========================================================
-   Casa ISA - Hoja de estilos principal
-   Etapa 2 del trabajo practico: identidad visual y layout
-   ========================================================== */
-
-/* ----- 1. Paleta y variables de la marca ----------------- */
-
 :root {
   --azul-tinta: #0B2E5C;
   --azul: #1D5FB5;
@@ -21,8 +14,6 @@
   --radio: 8px;
   --sombra: 0 2px 8px rgba(11, 46, 92, 0.08);
 }
-
-/* ----- 2. Reset basico ----------------------------------- */
 
 * {
   margin: 0;
@@ -57,22 +48,18 @@ a {
   color: var(--azul);
 }
 
-/* Contenedor centrado que usan todas las secciones */
 .contenedor {
   max-width: var(--ancho-maximo);
   margin: 0 auto;
   padding: 0 20px;
 }
 
-/* Foco visible para quien navega con el teclado */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible {
   outline: 3px solid var(--azul);
   outline-offset: 2px;
 }
-
-/* ----- 3. Barra superior de avisos ----------------------- */
 
 .barra-avisos {
   background-color: var(--azul-tinta);
@@ -87,8 +74,6 @@ input:focus-visible {
   flex-wrap: wrap;
   gap: 12px;
 }
-
-/* ----- 4. Cabecera con el logo y los accesos ------------- */
 
 .cabecera {
   border-bottom: 1px solid var(--gris-borde);
@@ -130,7 +115,6 @@ input:focus-visible {
   color: var(--azul-tinta);
 }
 
-/* Enlace al carrito con el globito de unidades */
 .enlace-carrito {
   display: inline-flex;
   align-items: center;
@@ -168,8 +152,6 @@ input:focus-visible {
   background-color: var(--azul-tinta);
 }
 
-/* ----- 5. Navbar de categorias --------------------------- */
-
 .navbar {
   background-color: var(--azul);
 }
@@ -192,13 +174,10 @@ input:focus-visible {
   background-color: var(--azul-tinta);
 }
 
-/* Marca en que pagina esta parado el usuario */
 .navbar a.activo {
   border-bottom-color: var(--blanco);
   background-color: var(--azul-tinta);
 }
-
-/* ----- 6. Portada del home ------------------------------- */
 
 .portada {
   background-color: var(--azul-claro);
@@ -207,14 +186,13 @@ input:focus-visible {
 
 .portada .contenedor {
   display: grid;
-  /* La columna de texto manda; la ilustracion acompaña */
+
   grid-template-columns: 1.05fr 1fr;
   gap: 40px;
   align-items: center;
 }
 
 .portada h1 {
-  /* Ancho pensado para que el titulo entre en dos lineas */
   max-width: 19ch;
   letter-spacing: -0.5px;
 }
@@ -232,7 +210,6 @@ input:focus-visible {
   gap: 16px;
 }
 
-/* Dato de financiacion al lado del boton */
 .pastilla {
   background-color: var(--blanco);
   border: 1px solid var(--gris-borde);
@@ -246,8 +223,6 @@ input:focus-visible {
   border-radius: var(--radio);
   width: 100%;
 }
-
-/* ----- 7. Botones ---------------------------------------- */
 
 .boton {
   display: inline-block;
@@ -282,8 +257,6 @@ input:focus-visible {
   width: 100%;
   text-align: center;
 }
-
-/* ----- 7b. Franja de beneficios -------------------------- */
 
 .franja-beneficios {
   border-bottom: 1px solid var(--gris-borde);
@@ -322,8 +295,6 @@ input:focus-visible {
   line-height: 1.4;
 }
 
-/* ----- 8. Secciones genericas ---------------------------- */
-
 .seccion {
   padding: 44px 0;
 }
@@ -336,15 +307,12 @@ input:focus-visible {
   margin-bottom: 24px;
 }
 
-/* ----- 9. Accesos a las categorias (home) ---------------- */
-
 .grilla-categorias {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   gap: 16px;
 }
 
-/* Icono y nombre en una linea: ocupa menos alto y se lee igual */
 .tarjeta-categoria {
   display: flex;
   align-items: center;
@@ -385,12 +353,9 @@ input:focus-visible {
   color: var(--azul-tinta);
 }
 
-/* ----- 10. Grilla y card de producto --------------------- */
-
 .grilla-productos {
   display: grid;
-  /* Tope de ancho para que con pocos productos las cards no
-     se estiren y pierdan proporcion */
+
   grid-template-columns: repeat(auto-fill, minmax(250px, 320px));
   justify-content: start;
   gap: 24px;
@@ -423,7 +388,6 @@ input:focus-visible {
   width: auto;
 }
 
-/* Distintivo sobre la foto del producto */
 .distintivo {
   position: absolute;
   top: 12px;
@@ -488,7 +452,6 @@ input:focus-visible {
   margin-top: auto;
 }
 
-/* Control para aumentar o disminuir unidades */
 .control-cantidad {
   margin-top: auto;
   display: flex;
@@ -527,7 +490,6 @@ input:focus-visible {
   padding: 10px 0;
 }
 
-/* Aviso que ocupa el lugar de las cards todavia sin cargar */
 .sin-productos {
   grid-column: 1 / -1;
   border: 1px dashed var(--gris-borde);
@@ -535,8 +497,6 @@ input:focus-visible {
   padding: 48px 24px;
   text-align: center;
 }
-
-/* ----- 11. Formularios de login y registro --------------- */
 
 .pantalla-formulario {
   background: linear-gradient(135deg, var(--azul-tinta), var(--azul));
@@ -596,8 +556,6 @@ input:focus-visible {
   text-align: center;
 }
 
-/* ----- 12. Pie de pagina --------------------------------- */
-
 .pie {
   background-color: var(--azul-tinta);
   color: var(--blanco);
@@ -605,7 +563,6 @@ input:focus-visible {
   margin-top: 48px;
 }
 
-/* Pegado al degradado del formulario, sin franja blanca en el medio */
 .pantalla-formulario + .pie {
   margin-top: 0;
 }
@@ -656,8 +613,6 @@ input:focus-visible {
   font-size: 0.8125rem;
 }
 
-/* ----- 13. Ajustes para pantallas chicas ----------------- */
-
 @media (max-width: 900px) {
   .portada .contenedor {
     grid-template-columns: 1fr;
@@ -697,9 +652,6 @@ input:focus-visible {
   }
 }
 
-
-/* ----- 14. Encabezado de seccion con enlace ------------- */
-
 .encabezado-seccion {
   display: flex;
   align-items: baseline;
@@ -718,7 +670,6 @@ input:focus-visible {
   text-decoration: underline;
 }
 
-/* Saludo al usuario logueado, en la portada */
 .bienvenida {
   background-color: var(--blanco);
   border-left: 4px solid var(--azul);
@@ -728,8 +679,6 @@ input:focus-visible {
   font-size: 0.9375rem;
   color: var(--azul-tinta);
 }
-
-/* ----- 15. Boton de agregar al carrito ------------------ */
 
 .boton-agregar {
   margin-top: 12px;
@@ -752,8 +701,6 @@ input:focus-visible {
 .boton-texto:hover {
   background-color: var(--azul-claro);
 }
-
-/* ----- 16. Pagina del carrito --------------------------- */
 
 .pagina-carrito {
   display: grid;
@@ -831,7 +778,6 @@ input:focus-visible {
   color: var(--azul);
 }
 
-/* Resumen de la compra, a la derecha */
 .resumen-carrito {
   background-color: var(--azul-humo);
   border: 1px solid var(--gris-borde);
@@ -874,7 +820,6 @@ input:focus-visible {
   margin-bottom: 8px;
 }
 
-/* Carrito sin productos y compra confirmada */
 .carrito-vacio,
 .compra-confirmada {
   grid-column: 1 / -1;
@@ -900,8 +845,6 @@ input:focus-visible {
   margin: 0 auto 4px;
 }
 
-/* ----- 17. Avisos de error ------------------------------ */
-
 .aviso {
   grid-column: 1 / -1;
   border-radius: var(--radio);
@@ -923,8 +866,6 @@ input:focus-visible {
   margin: 0 auto 6px;
   font-size: 0.9375rem;
 }
-
-/* ----- 18. Carrito en pantallas chicas ------------------ */
 
 @media (max-width: 900px) {
   .pagina-carrito {
@@ -956,10 +897,6 @@ input:focus-visible {
   }
 }
 
-
-/* ----- 19. Ficha de producto ---------------------------- */
-
-/* Ruta de navegacion arriba de la ficha */
 .migas {
   display: flex;
   flex-wrap: wrap;
@@ -1030,7 +967,6 @@ input:focus-visible {
   margin-bottom: 24px;
 }
 
-/* Datos de envio, stock y garantia */
 .datos-producto {
   list-style: none;
   border-top: 1px solid var(--gris-borde);
@@ -1052,7 +988,6 @@ input:focus-visible {
   color: var(--gris-texto);
 }
 
-/* Cantidad y boton, uno al lado del otro */
 .compra {
   display: flex;
   flex-wrap: wrap;
@@ -1069,8 +1004,6 @@ input:focus-visible {
 .compra .boton {
   flex: 1 1 200px;
 }
-
-/* ----- 19b. Tabla de especificaciones ------------------- */
 
 .especificaciones {
   margin-top: 56px;
@@ -1109,7 +1042,6 @@ input:focus-visible {
   line-height: 1.5;
 }
 
-/* Columna de los nombres del dato */
 .tabla-especificaciones th {
   width: 38%;
   color: var(--azul-tinta);
@@ -1124,7 +1056,6 @@ input:focus-visible {
   padding: 2px 0;
 }
 
-/* Texto solo para lectores de pantalla */
 .oculto {
   position: absolute;
   width: 1px;
@@ -1136,8 +1067,6 @@ input:focus-visible {
   white-space: nowrap;
   border: 0;
 }
-
-/* ----- 20. Ficha en pantallas chicas -------------------- */
 
 @media (max-width: 900px) {
   .detalle-producto {
